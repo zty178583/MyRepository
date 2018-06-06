@@ -28,7 +28,7 @@ public class Dao {
     }
     public static int getSize()
     {
-        System.out.println("test.Dao.getSize()");
+        //System.out.println("test.Dao.getSize()");
         if(flag)
         {
             flag=false;

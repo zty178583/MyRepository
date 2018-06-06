@@ -21,16 +21,8 @@ import javax.swing.WindowConstants;
  * @author Administrator
  */
 public class UIInsert extends JFrame{
-    public Model model;
-    public static JTextField score_textField;
     public UIInsert()
-    {
-        //添加combox
-        JPanel n = new JPanel();
-        JComboBox<Stu> jComboBox = new JComboBox(new Model());
-        n.add(jComboBox);
-        add(n,BorderLayout.NORTH);
-        
+    {       
         //插入UI
         JLabel JLId = new JLabel("id：");
         JTextField JTId = new JTextField(10);
@@ -38,13 +30,7 @@ public class UIInsert extends JFrame{
         JTextField JTName = new JTextField(10);
         JLabel score_label= new JLabel("分数");
         JTextField score_iTextField = new JTextField(10);
-        //显示UI
-        score_textField = new JTextField(10);
-        score_textField.setEditable(false);
-        JPanel c = new JPanel();
-        c.add(score_textField);
-        add(c);
-        //出入按钮
+        //插入按钮
         JButton jButton = new JButton("插入");
         jButton.addActionListener(new ActionListener() {
             @Override
@@ -56,8 +42,6 @@ public class UIInsert extends JFrame{
                 stu.setScore(Integer.parseInt(score_iTextField.getText()));
                 //保存
                 Dao.save(stu);
-                //更新
-                jComboBox.setModel(new Model());
             }
         });
         //panel包装并加入窗口
@@ -69,7 +53,7 @@ public class UIInsert extends JFrame{
         d.add(score_label);
         d.add(score_iTextField);
         d.add(jButton);
-        add(d,BorderLayout.SOUTH);
+        add(d,BorderLayout.CENTER);
         //设置窗口属性
         setBounds(0, 0, 600, 200);
         setLocationRelativeTo(null);

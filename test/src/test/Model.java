@@ -18,7 +18,7 @@ public class Model extends DefaultComboBoxModel{
             @Override
             public void setSelectedItem(Object anItem) {
                 stu=(Stu) anItem;
-                UIInsert.score_textField.setText(Dao.getScore(stu.getName())+"");
+                UIGetScore.score_textField.setText(Dao.getScore(stu.getName())+"");
             }
 
             @Override
