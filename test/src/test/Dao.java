@@ -42,9 +42,9 @@ public class Dao {
         try {
             controller.create(stu);
             flag=true;
-            System.out.println("鎻掑叆鎴愬姛");
+            System.out.println("插入成功");
         } catch (Exception e) {
-            System.out.println("淇濆瓨澶辫触");
+            System.out.println("插入失败");
         }
     }
     public static int getScore(String name)

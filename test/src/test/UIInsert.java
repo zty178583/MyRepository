@@ -23,28 +23,28 @@ import javax.swing.WindowConstants;
 public class UIInsert extends JFrame{
     public UIInsert()
     {       
-        //æ’å…¥UI
-        JLabel JLId = new JLabel("idï¼š");
+        //²åÈëUI
+        JLabel JLId = new JLabel("id£º");
         JTextField JTId = new JTextField(10);
-        JLabel JLName = new JLabel("å§“åï¼š");
+        JLabel JLName = new JLabel("ĞÕÃû£º");
         JTextField JTName = new JTextField(10);
-        JLabel score_label= new JLabel("åˆ†æ•°");
+        JLabel score_label= new JLabel("·ÖÊı");
         JTextField score_iTextField = new JTextField(10);
-        //æ’å…¥æŒ‰é’®
-        JButton jButton = new JButton("æ’å…¥");
+        //²åÈë°´Å¥
+        JButton jButton = new JButton("²åÈë");
         jButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //æ–°å»ºå¯¹è±¡å¹¶èµ‹å€¼
+                //ĞÂ½¨¶ÔÏó²¢¸³Öµ
                 Stu stu = new Stu();
                 stu.setId(Integer.parseInt(JTId.getText()));
                 stu.setName(JTName.getText());
                 stu.setScore(Integer.parseInt(score_iTextField.getText()));
-                //ä¿å­˜
+                //±£´æ
                 Dao.save(stu);
             }
         });
-        //panelåŒ…è£…å¹¶åŠ å…¥çª—å£
+        //panel°ü×°²¢¼ÓÈë´°¿Ú
         JPanel d = new JPanel();
         d.add(JLId);
         d.add(JTId);
@@ -54,10 +54,10 @@ public class UIInsert extends JFrame{
         d.add(score_iTextField);
         d.add(jButton);
         add(d,BorderLayout.CENTER);
-        //è®¾ç½®çª—å£å±æ€§
+        //ÉèÖÃ´°¿ÚÊôĞÔ
         setBounds(0, 0, 600, 200);
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
         setVisible(true);
     }
 }

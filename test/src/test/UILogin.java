@@ -26,9 +26,9 @@ public class UILogin extends JFrame{
     {
         setBounds(0, 0, 400, 200);
         
-        JLabel JLUser = new JLabel("Áî®Êà∑Âêç");
+        JLabel JLUser = new JLabel("”√ªß√˚");
         JTextField JTUser = new JTextField(10);
-        JLabel JLPassword = new JLabel("ÂØÜÁ†Å");
+        JLabel JLPassword = new JLabel("√‹¬Î");
         JPasswordField JPPassword = new JPasswordField(10);
        
         JPanel u = new JPanel();
@@ -42,7 +42,7 @@ public class UILogin extends JFrame{
         c.add(tip);
         add(c,BorderLayout.CENTER);
         
-        JButton jButton = new JButton("ÁôªÂΩï");
+        JButton jButton = new JButton("µ«¬º");
         jButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -59,12 +59,16 @@ public class UILogin extends JFrame{
                 }
                 if(flag)
                 {
-                    tip.setText("ÁôªÂΩïÊàêÂäü");
-                    new UIInsert();
-                    dispose();
+                    tip.setText("µ«¬º≥…π¶");
+                    UIMain main = (UIMain)UIController.getMain();
+                    main.tip.setText("µ«¬º≥…π¶");
+                    main.if_log_in=true;
+                    UIController.show(UIController.getMain());
+                    UIController.hide(UILogin.this);
+                            
                 }
                 else
-                    tip.setText("ÁôªÂΩïÂ§±Ë¥•");
+                    tip.setText("µ«¬º ß∞‹");
             }
         });
         
@@ -74,7 +78,10 @@ public class UILogin extends JFrame{
         add(u,BorderLayout.NORTH);
         add(d,BorderLayout.SOUTH);
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setVisible(true);
+        setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
+        
+        UIController.setLogIn(this);
+        UIController.show(UIController.getLogIn());
+                
     }
 }

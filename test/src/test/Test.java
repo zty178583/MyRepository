@@ -5,9 +5,6 @@
  */
 package test;
 
-import java.util.List;
-import javax.persistence.Persistence;
-
 /**
  *
  * @author Administrator

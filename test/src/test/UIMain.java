@@ -18,6 +18,7 @@ import java.awt.event.MouseListener;
 import java.io.UnsupportedEncodingException;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
@@ -27,23 +28,36 @@ import javax.swing.WindowConstants;
  */
 public class UIMain extends JFrame{
     public boolean if_log_in=false;
-    public UIMain() throws UnsupportedEncodingException{
-        //èœå•æ 
+    public JTextField tip;
+    public UIMain(){
+        //²Ëµ¥À¸
         MenuBar menuBar = new MenuBar();
         
-        Menu menu = new Menu(new String("æ“ä½œ".getBytes("UTF-8"), "GBK"));
-        MenuItem insert = new MenuItem("æ’å…¥");
+        Menu menu = new Menu("²Ù×÷");
+        MenuItem insert = new MenuItem("²åÈë");
         insert.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                if(if_log_in)
+                {
+                    JFrame i = UIController.getInsert();
+                    UIController.show(i);
+                }else{
+                    JOptionPane.showMessageDialog(null, "ÇëÏÈµÇÂ¼", "ÌáÊ¾", JOptionPane.OK_OPTION);
+                }
             }
         });
-        MenuItem get_score = new MenuItem("æŸ¥è¯¢");
+        MenuItem get_score = new MenuItem("²éÑ¯");
         get_score.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                if(if_log_in)
+                {
+                    JFrame getScore = UIController.getGetScore();
+                    UIController.show(getScore);
+                }else{
+                    JOptionPane.showMessageDialog(null, "ÇëÏÈµÇÂ¼", "ÌáÊ¾", JOptionPane.OK_OPTION);
+                }
             }
         });
         menu.add(insert);
@@ -51,13 +65,16 @@ public class UIMain extends JFrame{
         
         menuBar.add(menu);
         
-        //ç•Œé¢
-        JTextField tip = new JTextField(10);
+        //½çÃæ
+        tip = new JTextField(10);
         tip.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                new UILogin();
-                dispose();
+                if(!if_log_in)
+                {
+                    JFrame logIn = UIController.getLogIn();
+                    UIController.show(logIn);
+                }
             }
 
             @Override
@@ -73,26 +90,28 @@ public class UIMain extends JFrame{
             @Override
             public void mouseEntered(MouseEvent e) {
                 if(!if_log_in)
-                    tip.setText("ç‚¹å‡»ç™»å½•");
+                    tip.setText("µã»÷µÇÂ¼");
             }
 
             @Override
             public void mouseExited(MouseEvent e) {
                if(!if_log_in) 
-                   tip.setText("å°šæœªç™»å½•");
+                   tip.setText("ÉĞÎ´µÇÂ¼");
             }
         });
-        tip.setText("å°šæœªç™»å½•");
+        tip.setText("ÉĞÎ´µÇÂ¼");
         tip.setEditable(false);
         Panel c = new Panel();c.add(tip);
         add(c,BorderLayout.CENTER);
-        //è®¾ç½®çª—å£å±æ€§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-        //æ·»åŠ èœå•æ 
+        //ÉèÖÃ´°¿ÚÊôĞÔ??????
+        //Ìí¼Ó²Ëµ¥À¸
         setMenuBar(menuBar);
         setBounds(0, 0, 600, 200);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setVisible(true);
+        
+        UIController.setMain(this);
+        UIController.show(UIController.getMain());
     }
     
 }

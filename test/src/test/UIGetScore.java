@@ -25,25 +25,25 @@ public class UIGetScore extends JFrame{
     public static JTextField score_textField;
     public UIGetScore()
     {
-        //æ·»åŠ combox
+        //Ìí¼Ócombox
         JPanel n = new JPanel();
         JComboBox<Stu> jComboBox = new JComboBox(new Model());
         n.add(jComboBox);
         add(n,BorderLayout.NORTH);
         
-        //æ˜¾ç¤ºUI
+        //ÏÔÊ¾UI
         score_textField = new JTextField(10);
         score_textField.setEditable(false);
         JPanel c = new JPanel();
         c.add(score_textField);
         add(c);
-        //panelåŒ…è£…å¹¶åŠ å…¥çª—å£
+        //panel°ü×°²¢¼ÓÈë´°¿Ú
         JPanel d = new JPanel();
         add(d,BorderLayout.SOUTH);
-        //è®¾ç½®çª—å£å±æ€§
+        //ÉèÖÃ´°¿ÚÊôĞÔ
         setBounds(0, 0, 600, 200);
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
         setVisible(true);
     }
 }
