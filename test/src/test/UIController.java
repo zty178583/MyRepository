@@ -12,10 +12,10 @@ import javax.swing.JFrame;
  * @author Administrator
  */
 public class UIController {
-    private static JFrame GetScore;
     private static JFrame Insert;
     private static JFrame LogIn;
     private static JFrame Main;
+    private static JFrame delete;
     
     public static void show(JFrame op)
     {
@@ -29,15 +29,6 @@ public class UIController {
             op.setVisible(false);
         else
             System.out.println("ø’÷∏’Î");
-    }
-
-    /**
-     * @return the GetScore
-     */
-    public static JFrame getGetScore() {
-        if(GetScore==null)
-            setGetScore(new UIGetScore());
-        return GetScore;
     }
     /**
      * @return the Insert
@@ -65,13 +56,6 @@ public class UIController {
     }
 
     /**
-     * @param aGetScore the GetScore to set
-     */
-    public static void setGetScore(JFrame aGetScore) {
-        GetScore = aGetScore;
-    }
-
-    /**
      * @param aInsert the Insert to set
      */
     public static void setInsert(JFrame aInsert) {
@@ -90,5 +74,21 @@ public class UIController {
      */
     public static void setMain(JFrame aMain) {
         Main = aMain;
+    }
+
+    /**
+     * @return the delete
+     */
+    public static JFrame getDelete() {
+        if(delete==null)
+            delete=new UIDelete();
+        return delete;
+    }
+
+    /**
+     * @param aDelete the delete to set
+     */
+    public static void setDelete(JFrame aDelete) {
+        delete = aDelete;
     }
 }
