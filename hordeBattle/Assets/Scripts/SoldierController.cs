@@ -28,7 +28,7 @@ public class SoldierController : MonoBehaviour {
     /// <param name="other"></param>
     void OnTriggerStay(Collider other)
     {
-        if (solider.enemy!=null&&other.tag.Equals(solider.getEnemyTag()))//接触敌人
+        if (solider.enemy!=null&&other.tag.Equals(solider.GetEnemyTag()))//接触敌人
         {
             //停止导航和移动动画
             aiBehavior.StopNav();
@@ -40,7 +40,7 @@ public class SoldierController : MonoBehaviour {
 
 	void OnTriggerExit(Collider other)
 	{
-        if(other.tag.Equals(solider.getEnemyTag()))
+        if(other.tag.Equals(solider.GetEnemyTag()))
         {
             ifattack = false;
             FindClosestAttack();
@@ -49,7 +49,7 @@ public class SoldierController : MonoBehaviour {
 	private void FindClosestAttack()
     {
         //找到标签里最近的
-        GameObject enemy = aiBehavior.GetClosestEnemy(solider.getEnemyTag());
+        GameObject enemy = aiBehavior.GetClosestEnemy(solider.GetEnemyTag());
         if(enemy==null)
         {
             //TODO
