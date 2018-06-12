@@ -6,7 +6,6 @@
 package test;
 
 import java.awt.BorderLayout;
-import java.awt.HeadlessException;
 import java.awt.Menu;
 import java.awt.MenuBar;
 import java.awt.MenuItem;
@@ -15,9 +14,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.io.UnsupportedEncodingException;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
@@ -53,8 +50,22 @@ public class UIMain extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 if(if_log_in)
                 {
-                    JFrame getScore = UIController.getGetScore();
+                    JFrame getScore = new UIGetScore();
                     UIController.show(getScore);
+                }else{
+                    JOptionPane.showMessageDialog(null, "请先登录", "提示", JOptionPane.OK_OPTION);
+                }
+            }
+        });
+        
+        MenuItem delete = new MenuItem("删除");
+        delete.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(if_log_in)
+                {
+                    JFrame uidelete = new UIDelete();
+                    UIController.show(uidelete);
                 }else{
                     JOptionPane.showMessageDialog(null, "请先登录", "提示", JOptionPane.OK_OPTION);
                 }
@@ -62,7 +73,7 @@ public class UIMain extends JFrame{
         });
         menu.add(insert);
         menu.add(get_score);
-        
+        menu.add(delete);
         menuBar.add(menu);
         
         //界面

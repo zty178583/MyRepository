@@ -6,7 +6,10 @@
 package test;
 
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.persistence.Persistence;
+import test.exceptions.NonexistentEntityException;
 
 /**
  *
@@ -37,14 +40,16 @@ public class Dao {
         else
            return size; 
     }
-    public static void save(Stu stu)
+    public static String save(Stu stu)
     {
         try {
             controller.create(stu);
             flag=true;
             System.out.println("插入成功");
+            return "插入成功";
         } catch (Exception e) {
             System.out.println("插入失败");
+            return "插入失败"+e.getMessage();
         }
     }
     public static int getScore(String name)
@@ -57,5 +62,13 @@ public class Dao {
             }
         }
         return score;
+    }
+
+    static void delete(Stu stu) {
+        try {
+            controller.destroy(stu.getId());
+        } catch (NonexistentEntityException ex) {
+            System.out.println("删除失败");
+        }
     }
 }
