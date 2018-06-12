@@ -7,7 +7,7 @@ public class Soldier : SoldierBase {
 
     public Texture2D blood_red;
     public Texture2D blood_black;
-
+    public Soldier enemy_com_soldier;
     public GameObject enemy = null;
     public bool ifdead = false;
     private float max_hp;
@@ -92,6 +92,8 @@ public class Soldier : SoldierBase {
     /// </summary>
     private void Die()
     {
+        Destroy(gameObject.GetComponent<SphereCollider>());
+        Destroy(gameObject.GetComponent<BoxCollider>());
         //死亡动画
         GetComponent<Animator>().SetTrigger(AnimatorPams.die);
         if (camp.Equals(Tags.blue_soldier))
@@ -103,12 +105,8 @@ public class Soldier : SoldierBase {
             GameController.red_soldiers.Remove(gameObject);
         }
         ifdead = true;
-        //GetComponent<SphereCollider>().isTrigger = false;//死亡后，胜者再次触发OntriggerEnter
-        //GetComponent<SphereCollider>().isTrigger = false;
-        //Destroy(gameObject.GetComponent<NavMeshAgent>());
-        Destroy(gameObject.GetComponent<SphereCollider>());
-        Destroy(gameObject.GetComponent<BoxCollider>());
         GetComponent<NavMeshAgent>().radius = 0;
+        enemy = null;
         Destroy(gameObject, 5);
     }
 

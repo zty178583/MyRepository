@@ -62,9 +62,10 @@
     <Compile Include="Assets\Scripts\AIBehavior.cs" />
     <Compile Include="Assets\Scripts\AnimatorPams.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
+    <Compile Include="Assets\Scripts\ReptileSoldierController.cs" />
     <Compile Include="Assets\Scripts\Soldier.cs" />
     <Compile Include="Assets\Scripts\SoldierBase.cs" />
-    <Compile Include="Assets\Scripts\SoldierController.cs" />
+    <Compile Include="Assets\Scripts\SoldierControllerBase.cs" />
     <Compile Include="Assets\Scripts\Tags.cs" />
     <Compile Include="Assets\Scripts\TextureUtil.cs" />
     <None Include="Assets\CartoonMonsters\shaders\2sided_transparent_cutout.shader" />

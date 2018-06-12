@@ -40,8 +40,8 @@ MonoBehaviour:
     y: 695
     width: 1151
     height: 253
-  m_MinSize: {x: 102, y: 121}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -70,7 +70,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 342}
   m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 28
+  controlID: 62
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 492}
   m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
-  controlID: 159
+  controlID: 85
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -230,8 +230,8 @@ MonoBehaviour:
     y: 0
     width: 369
     height: 948
-  m_MinSize: {x: 277, y: 71}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -526,20 +526,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Texture
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 67
   m_LastFolders:
-  - Assets/Texture
+  - Assets/Scripts
   m_LastFoldersGridSize: 67
   m_LastProjectPath: C:\Users\Administrator\Desktop\MyRepository\hordeBattle
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: b42f0000
-    m_LastClickedID: 12212
-    m_ExpandedIDs: 00000000f62a0000a62d000000ca9a3bffffff7f
+    m_SelectedIDs: 522e0000
+    m_LastClickedID: 11858
+    m_ExpandedIDs: 00000000fc2a0000ac2d000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -567,7 +567,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000f62a0000a62d0000
+    m_ExpandedIDs: 00000000fc2a0000ac2d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -723,14 +723,14 @@ MonoBehaviour:
     height: 674
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 6846.983790022782
+  lastFramingTime: 2642.8540577235726
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 58.429726, y: 6.294164, z: 86.1752}
+    m_Target: {x: 63.387978, y: 1.6024361, z: 78.39465}
     speed: 2
-    m_Value: {x: 58.429726, y: 6.294164, z: 86.1752}
+    m_Value: {x: 63.387978, y: 1.6024361, z: 78.39465}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -758,13 +758,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.113737494, y: -0.88593745, z: 0.30494118, w: 0.33043846}
+    m_Target: {x: -0.06136912, y: -0.8774531, z: 0.46116772, w: -0.11676588}
     speed: 2
-    m_Value: {x: -0.113737494, y: 0.88593745, z: -0.30494118, w: -0.33043846}
+    m_Value: {x: 0.06136912, y: 0.8774531, z: -0.46116772, w: 0.11676589}
   m_Size:
-    m_Target: 10.540362
+    m_Target: 30.43366
     speed: 2
-    m_Value: 10.540362
+    m_Value: 30.43366
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -803,9 +803,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: a02f0000
+    m_SelectedIDs: 522e0000
     m_LastClickedID: 0
-    m_ExpandedIDs: eafbffff00000000
+    m_ExpandedIDs: dafbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

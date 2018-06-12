@@ -1342,7 +1342,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1094433227970458}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 36.71, y: 11.34515, z: 70.76}
+  m_LocalPosition: {x: 28.82, y: 11.34515, z: 70.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4717533826263386}
@@ -1494,7 +1494,7 @@ BoxCollider:
   m_GameObject: {fileID: 1094433227970458}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 0.68, z: 1}
   m_Center: {x: 0, y: 0.69, z: -0.1}
@@ -1649,7 +1649,7 @@ SkinnedMeshRenderer:
   m_RootBone: {fileID: 4604581670111074}
   m_AABB:
     m_Center: {x: -0.35236347, y: -0.0069892406, z: 0.009569079}
-    m_Extent: {x: 1.205311, y: 1.1644058, z: 0.5535612}
+    m_Extent: {x: 0, y: 0, z: 0}
   m_DirtyAABB: 0
 --- !u!195 &195806368399030974
 NavMeshAgent:
