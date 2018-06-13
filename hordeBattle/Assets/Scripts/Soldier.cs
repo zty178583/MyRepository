@@ -5,11 +5,9 @@ using UnityEngine.AI;
 
 public class Soldier : SoldierBase {
 
+    public float hp_offset=-1.8f;
     public Texture2D blood_red;
     public Texture2D blood_black;
-    public Soldier enemy_com_soldier;
-    public GameObject enemy = null;
-    public bool ifdead = false;
     private float max_hp;
 	// Use this for initialization
 	void Start () {
@@ -20,19 +18,16 @@ public class Soldier : SoldierBase {
 	
 	// Update is called once per frame
 	void Update () {
-        if (HP <= 0&&!ifdead)
-        {
-            Die();
-        }
+        if(enemy!=null)
+            enemy_com_soldier = enemy.GetComponent<Soldier>();
     }
-    
     void OnGUI()
     {
         //绘制血条
         if(!ifdead&&HP<max_hp)
         {
             //计算模型高度
-            float size_y = GetComponent<BoxCollider>().bounds.size.y+0.8f;
+            float size_y = GetComponent<SphereCollider>().bounds.size.y+ hp_offset;
             float scal_y = transform.localScale.y;
             float model_height = size_y * scal_y;
             //得到模型头顶在3D世界中的坐标
@@ -55,45 +50,11 @@ public class Soldier : SoldierBase {
 
     }
     /// <summary>
-    /// 攻击敌人
-    /// </summary>
-    public new void Attack()
-    {
-        if(!ifdead)
-        {
-            var enemy_com_soldier = enemy.GetComponent<Soldier>();
-            enemy_com_soldier.Sufer(damage);
-        }
-    }
-    /// <summary>
-    /// 承受伤害
-    /// </summary>
-    /// <returns>The sufer.</returns>
-    /// <param name="damage">伤害</param>
-    public new void Sufer(float damage)
-    {
-        HP -= (damage - defense);
-    }
-    /// <summary>
-    /// 获得敌人标签
-    /// </summary>
-    /// <returns>The enemy tag.</returns>
-    public string GetEnemyTag()
-    {
-        if (camp.Equals(Tags.red_soldier))
-            return Tags.blue_soldier;
-        else if (camp.Equals(Tags.blue_soldier))
-            return Tags.red_soldier;
-        else
-            return "";
-    }
-    /// <summary>
     /// 死亡
     /// </summary>
-    private void Die()
+    public void Die()
     {
         Destroy(gameObject.GetComponent<SphereCollider>());
-        Destroy(gameObject.GetComponent<BoxCollider>());
         //死亡动画
         GetComponent<Animator>().SetTrigger(AnimatorPams.die);
         if (camp.Equals(Tags.blue_soldier))
@@ -105,7 +66,9 @@ public class Soldier : SoldierBase {
             GameController.red_soldiers.Remove(gameObject);
         }
         ifdead = true;
-        GetComponent<NavMeshAgent>().radius = 0;
+        NavMeshAgent nm = GetComponent<NavMeshAgent>();
+        nm.radius = 0;
+        nm.height = 0;
         enemy = null;
         Destroy(gameObject, 5);
     }

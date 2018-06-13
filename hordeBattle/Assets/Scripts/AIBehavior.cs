@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-[RequireComponent(typeof(AIBehavior))]
-[RequireComponent(typeof(Soldier))]
 public class AIBehavior : MonoBehaviour {
     
     private NavMeshAgent nav;

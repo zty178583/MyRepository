@@ -6,6 +6,8 @@ TagManager:
   tags:
   - blue_soldier
   - red_soldier
+  - fireball
+  - ground
   layers:
   - Default
   - TransparentFX

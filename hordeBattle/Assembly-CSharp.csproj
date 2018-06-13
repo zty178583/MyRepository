@@ -61,6 +61,8 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\AIBehavior.cs" />
     <Compile Include="Assets\Scripts\AnimatorPams.cs" />
+    <Compile Include="Assets\Scripts\FlightSkillController.cs" />
+    <Compile Include="Assets\Scripts\FreeFall.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\ReptileSoldierController.cs" />
     <Compile Include="Assets\Scripts\Soldier.cs" />
@@ -68,6 +70,8 @@
     <Compile Include="Assets\Scripts\SoldierControllerBase.cs" />
     <Compile Include="Assets\Scripts\Tags.cs" />
     <Compile Include="Assets\Scripts\TextureUtil.cs" />
+    <Compile Include="Assets\Scripts\WizardSoldierController.cs" />
+    <Compile Include="Assets\Scripts\WolfriderSoldierController.cs" />
     <None Include="Assets\CartoonMonsters\shaders\2sided_transparent_cutout.shader" />
     <None Include="Assets\CartoonMonsters\shaders\2sided_transparent.shader" />
     <Reference Include="UnityEditor.StandardEvents">

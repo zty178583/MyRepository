@@ -45,7 +45,7 @@ public class UIDelete extends JFrame{
                 btn_update.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        String text = id.getText();
+                        //String text = id.getText();
                         stu.setName("");
                     }
                 });

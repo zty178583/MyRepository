@@ -67,8 +67,7 @@ GameObject:
   - component: {fileID: 95196038332903934}
   - component: {fileID: 54242765504790796}
   - component: {fileID: 135117651426613074}
-  - component: {fileID: 65665652048143238}
-  - component: {fileID: 114820847132090326}
+  - component: {fileID: 114157068657248474}
   - component: {fileID: 114071613582218044}
   - component: {fileID: 114708675249692510}
   - component: {fileID: 195216857510747750}
@@ -1411,7 +1410,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1047423343184374}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 41.03, y: 11.34515, z: 58.379997}
+  m_LocalPosition: {x: 38.950005, y: 11.34515, z: 59.71}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4292542874318442}
@@ -1486,18 +1485,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!65 &65665652048143238
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1047423343184374}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 0.68, z: 1}
-  m_Center: {x: 0, y: 0.69, z: -0.1}
 --- !u!95 &95196038332903934
 Animator:
   serializedVersion: 3
@@ -1527,6 +1514,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd6f326ea8c6d1344812570f8680e38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114157068657248474
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1047423343184374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5131683798348246be9b903dd03658b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ifattack: 0
 --- !u!114 &114708675249692510
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1538,28 +1537,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 768b14bcd3e8a2947a94960e7122fcb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemy: {fileID: 0}
+  ifdead: 0
   camp: 
   HP: 100
   MP: 100
   damage: 10
   defense: 0
   attack_speed: 1.5
+  enemy_com_soldier: {fileID: 0}
   blood_red: {fileID: 2800000, guid: 19d9e0b767396a14e80bdb4945c0ce95, type: 3}
   blood_black: {fileID: 2800000, guid: a5e2393c774d1412bab8df70b0d33b0f, type: 3}
-  enemy: {fileID: 0}
-  ifdead: 0
---- !u!114 &114820847132090326
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1047423343184374}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04fe47ef3435f4a4689bedd91a1366f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ifattack: 0
 --- !u!135 &135117651426613074
 SphereCollider:
   m_ObjectHideFlags: 1
