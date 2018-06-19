@@ -12,7 +12,7 @@ public class ReptileSoldierController : SoldierControllerBase {
     {
         aiBehavior.StopNav();
         if_can_attack = true;//开始攻击计时
-        solider.enemy = other.gameObject;
+        //solider.enemy = other.gameObject;
         animator.SetBool(AnimatorPams.ifmove, false);
     }
     //protected override void OnEnemyOutAttackRange(Collider other)//没啥用

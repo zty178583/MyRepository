@@ -39,15 +39,18 @@ public class SoldierControllerBase : MonoBehaviour
     {
         if (solider==null||solider.ifdead)
             return;
-        if (Vector3.Distance(transform.position, other.gameObject.transform.position) > GetComponent<SphereCollider>().radius)
+
+        if (!other.tag.Equals(solider.GetEnemyTag()))
             return;
+        if (Vector3.Distance(transform.position, other.gameObject.transform.position)-GetComponent<Collider>().bounds.size.y/2 > GetComponent<SphereCollider>().radius)
+        {
+            //Debug.Log(transform.position+"-"+other.gameObject.transform.position);
+            //Debug.Log(Vector3.Distance(transform.position, other.gameObject.transform.position) + ">" + GetComponent<SphereCollider>().radius);         
+			return;
+        }
         //TODO
         //接触敌人how？
-        if (other.tag.Equals(solider.GetEnemyTag()))//接触敌人
-        {
-            
-            OnEnemyInAttackRange(other);
-        }
+        OnEnemyInAttackRange(other);
 
     }
 
@@ -90,8 +93,8 @@ public class SoldierControllerBase : MonoBehaviour
         }
         else
         {
+            solider.enemy = enemy;
             FindedEnemy(enemy);
-
         }
     }
 

@@ -15,7 +15,7 @@ public class WizardSoldierController : SoldierControllerBase {
         //animator.SetBool(AnimatorPams.ifmove, false);
         //aiBehavior.StopNav();
         if_can_attack = true;//开始攻击计时
-        solider.enemy = other.gameObject;
+        //solider.enemy = other.gameObject;
     }
     //protected override void OnEnemyOutAttackRange(Collider other)//没啥用
     //{
@@ -44,7 +44,7 @@ public class WizardSoldierController : SoldierControllerBase {
     protected override GameObject FindEnemy()//返回找到的对象，找不到算赢了
     {
         //GameObject enemy = aiBehavior.GetClosestEnemy(solider.GetEnemyTag());
-        return target;
+        return aiBehavior.GetClosestEnemy(solider.GetEnemyTag());
     }
     private void DelayPlay()
     {
@@ -52,6 +52,7 @@ public class WizardSoldierController : SoldierControllerBase {
         GameObject fire_ball = GetComponentInChildren<FlightSkillController>().gameObject;
         GameObject new_fireball = Instantiate(fire_ball, fire_ball.transform);
         new_fireball.transform.SetParent(null);
+        new_fireball.GetComponent<FlightSkillController>().if_ontology = false;
         new_fireball.AddComponent<FreeFall>().target = solider.enemy;
     }
 }

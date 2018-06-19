@@ -8,7 +8,7 @@ public class FreeFall : MonoBehaviour
     public const float g = 9.8f;
 
     public GameObject target;
-    public float speed = 10;
+    public float speed = 25;
     private float verticalSpeed;
     void Start()
     {
@@ -27,11 +27,11 @@ public class FreeFall : MonoBehaviour
     private float time;
     void Update()
     {
-        if (transform.position.y < target.transform.position.y)
-        {
-            //finish
-            return;
-        }
+        //if (transform.position.y < target.transform.position.y)
+        //{
+        //    //finish
+        //    return;
+        //}
         time += Time.deltaTime;
         float test = verticalSpeed - g * time;
         transform.Translate(transform.forward * speed * Time.deltaTime, Space.World);
